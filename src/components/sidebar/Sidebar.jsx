@@ -1,37 +1,45 @@
-import { BsPlusSquare } from 'react-icons/bs';
+import { BsPlusSquare } from "react-icons/bs";
 import styles from "./Sidebar.module.css";
-import { RiDeleteBin3Line } from 'react-icons/ri';
+import { RiDeleteBin3Line } from "react-icons/ri";
 
-function Sidebar( {addNote} ) {
-    const deleteClick = () => {
-        console.log("delete click");
-    }
+function Sidebar({ addNote, notes }) {
+  const deleteClick = () => {
+    console.log("delete click");
+  };
 
-
-    return(
-        <aside className={styles.container}>
-            <header className={styles.header}>
-                <h1>notes</h1>
-                <BsPlusSquare className={styles.icon} onClick={() => addNote()} />
-            </header>
-            <ul className={styles.content}>
-            <li> 
-                <div className={styles.header}>
-                    <h5>title</h5>
-                    <button className={styles.btn} onClick={deleteClick} >
-                        <RiDeleteBin3Line className={styles.deleteIcon} />
-                    </button>
-                </div>
-                <p className={styles.context}>
-                    you can add
-                </p>
-                <p className={styles.footer}>
-                    history
-                </p>
-            </li>
-            </ul>
-        </aside>
-    )
+  return (
+    <aside className={styles.container}>
+      <header className={styles.header}>
+        <h1>notes</h1>
+        <BsPlusSquare className={styles.icon} onClick={() => addNote()} />
+      </header>
+      <ul className={styles.content}>
+        {notes.map((note) => (
+          <li key={note.id}>
+            <div className={styles.list}>
+              <h4>{note.title}</h4>
+              <button className={styles.btn} onClick={deleteClick}>
+                <RiDeleteBin3Line className={styles.deleteIcon} />
+              </button>
+            </div>
+            <p className={styles.context}>{note.body.slice(0,50)}...</p>
+            <p className={styles.footer}>history</p>
+          </li>
+        ))}
+      </ul>
+    </aside>
+  );
 }
 
 export default Sidebar;
+
+// <li>
+//           <div className={styles.list}>
+//             <h5>title</h5>
+//             <button className={styles.btn} onClick={deleteClick}>
+//               <RiDeleteBin3Line className={styles.deleteIcon} />
+//             </button>
+//           </div>
+//           <p className={styles.context}>you can add</p>
+//           <p className={styles.footer}>history</p>
+//         </li>
