@@ -28,4 +28,6 @@ code {
 :root {
   --primary: #4285F4;
   --white: #fff;
+  --sidebarPadding: 2rem;
+  --danger: #DC3545;
 }

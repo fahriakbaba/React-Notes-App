@@ -1,6 +1,7 @@
 .container {
-    padding: 1rem 2rem;
+    padding: var(--sidebarPadding);
     border-right: 2px solid rgba(128, 128, 128, .5);
+    background-color: rgba(252, 248, 232, .6);
 }
 
 .header {
@@ -25,3 +26,30 @@
     background-color: var(--primary);
     color: var(--white);
 }
+
+.content {
+    padding: 2rem 0;
+}
+
+.btn {
+    border: none;
+    outline: none;
+    font-size: .5rem;
+    background-color: rgba(252, 248, 232, .6);
+}
+
+.deleteIcon {
+    font-size: 1.5rem;
+    color: var(--danger);
+    border-radius: 3px;
+    padding: 1.5px;
+    cursor: pointer;
+    transition: all .7s;
+}
+
+.deleteIcon:hover {
+    color: var(--white);
+    background-color: var(--danger);
+}
+
+ 
