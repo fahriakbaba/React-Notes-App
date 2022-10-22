@@ -2,8 +2,9 @@ import { BsPlusSquare } from "react-icons/bs";
 import styles from "./Sidebar.module.css";
 import { RiDeleteBin3Line } from "react-icons/ri";
 
-function Sidebar({ addNote, notes }) {
-  const deleteClick = () => {
+function Sidebar({ addNote, notes, deleteNote }) {
+  const deleteClick = (id) => {
+    deleteNote(id);
     console.log("delete click");
   };
 
@@ -18,7 +19,7 @@ function Sidebar({ addNote, notes }) {
           <li key={note.id}>
             <div className={styles.list}>
               <h4>{note.title}</h4>
-              <button className={styles.btn} onClick={deleteClick}>
+              <button className={styles.btn} onClick={() => deleteClick(note.id)}>
                 <RiDeleteBin3Line className={styles.deleteIcon} />
               </button>
             </div>
