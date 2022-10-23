@@ -5,6 +5,7 @@ import Sidebar from "./components/sidebar/Sidebar.jsx";
 
 function App() {
   const [notes, setNotes] = React.useState([]);
+  const [activeNoteId, setActiveNoteId] = React.useState("");
 
   const addNote = () => {
     const newNote = {
@@ -26,7 +27,7 @@ function App() {
 
   return (
     <div className="App">
-      <Sidebar addNote={addNote} notes={notes} deleteNote={deleteNote} />
+      <Sidebar addNote={addNote} notes={notes} deleteNote={deleteNote} activeNoteId={activeNoteId} setActiveNoteId={setActiveNoteId} />
       <Main />
     </div>
   );
