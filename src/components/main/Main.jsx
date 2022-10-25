@@ -10,19 +10,25 @@ function Main({ currentNote, updateNote }) {
     })
   };
 
+  if (!currentNote) {
+    return <h3 className={styles.info}>No Active Note</h3>
+  }
+
   return (
     <main className={styles.container}>
       <section>
         <input
-          className="title"
+        className={styles.text}
+          placeholder="Note Title"
           type="text"
           value={currentNote?.title}
           onChange={(e) => handleChange("title", e.target.value)}
         />
         <textarea
-          id=""
+          className={styles.textarea}
           cols="30"
           rows="10"
+          placeholder="Write your note here..."
           value={currentNote?.body}
           onChange={(e) => handleChange("body", e.target.value)}
         />
