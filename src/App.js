@@ -35,7 +35,18 @@ function App() {
   }
 
   const updateNote = (text) => {
-    setNotes(prevNotes => prevNotes.map(note => note.id === activeNoteId ? { ...text } : note))
+    //setNotes(prevNotes => prevNotes.map(note => note.id === activeNoteId ? { ...text } : note));
+    setNotes(prevNotes => {
+      const newArrayList = [];
+      for(let i=0; i<prevNotes.length; i++) {
+        if(prevNotes[i].id === activeNoteId) {
+          newArrayList.unshift(text);
+        } else {
+          newArrayList.push(prevNotes[i]);
+        }
+      }
+      return newArrayList;
+    })
   }
 
 
