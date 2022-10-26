@@ -37,7 +37,7 @@ function Sidebar({
               </button>
             </div>
             <p className={styles.context}>{note.body.slice(0, 50)}...</p>
-            <p className={styles.footer}>moment import et ve kullan</p>
+            <p className={styles.footer}>{note.history}</p>
           </li>
         ))}
       </ul>
