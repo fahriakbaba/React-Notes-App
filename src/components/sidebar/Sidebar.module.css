@@ -2,6 +2,7 @@
     padding: var(--sidebarPadding);
     border-right: 2px solid rgba(128, 128, 128, .5);
     background-color: rgba(252, 248, 232, .6);
+    overflow-y: auto;
 }
 
 .header {
